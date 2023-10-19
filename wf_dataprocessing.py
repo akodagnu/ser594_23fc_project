@@ -1,11 +1,11 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 
 def process():
-    print("Data processed")
+    filename = "./data_original/Occupancy_Estimation.csv"
+    read_dataset(filename)
 
 def get_temp_value(df):
+    # Averaging the temperature values received from four different sensors
     select_temp_cols = ['S1_Temp', 'S2_Temp', 'S3_Temp', 'S4_Temp']
     avg_temp = []
     for i in df.index:
@@ -20,8 +20,3 @@ def read_dataset(filename):
     df = pd.read_csv(filename)
     get_temp_value(df)
     df.to_csv('./data_processed/Occupancy_Estimation_processed.csv')
-    
-
-if __name__ == '__main__':
-    filename = "./data_original/Occupancy_Estimation.csv"
-    read_dataset(filename)

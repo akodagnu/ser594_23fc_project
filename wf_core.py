@@ -5,4 +5,5 @@ def core():
     wf_dataprocessing.process()
     wf_visualization.visualize()
 
-core()
+if __name__ == '__main__':
+    core()

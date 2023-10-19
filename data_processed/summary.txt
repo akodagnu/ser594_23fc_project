@@ -1,3 +1,4 @@
+Quantitative features: 
 Temp_Avg
 Maximum: 26.8
 Minimum: 24.89
@@ -18,3 +19,7 @@ Maximum: 1270
 Minimum: 345
 Median: 360.0
 
+Qualitative features: 
+Number of categories:2
+Most frequent category: 0
+Least frequent category: 1
