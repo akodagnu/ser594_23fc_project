@@ -15,8 +15,8 @@ def compute_statistics(df):
     medians = []
     new_df = df[selected_features]
     for feature in selected_features:
-        maximums.append(max(new_df[feature]))
-        minimums.append(min(new_df[feature]))
+        maximums.append(max(list(new_df[feature])))
+        minimums.append(min(list(new_df[feature])))
         values = list(new_df[feature])
         values.sort()
         mid = len(values) // 2
