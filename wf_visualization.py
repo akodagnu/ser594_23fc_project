@@ -46,6 +46,7 @@ def compute_statistics(df):
         less_freq = "0"
 
     # Writing everything to file
+    print("Writing to summary file")
     with open("./data_processed/summary.txt","w+") as f:
         f.write("Quantitative features: \n")
         for i in range(4):
@@ -63,10 +64,12 @@ def calculate_corr_matrix(df):
     corr_columns = ['Temp_Avg', 'S1_Light', 'S1_Sound', 'S5_CO2']
     new_df = df[corr_columns]
     corr_matrix = new_df.corr()
+    print("Writing to correlations file")
     with open("./data_processed/correlations.txt","w+") as f:
         f.write(str(corr_matrix))
 
 def scatter_plot(df):
+    print("Plotting Temp vs Light")
     fig, ax = plt.subplots()
     fig.suptitle("Average Temperature vs Light")
     ax.set(xlabel = 'Temperature(in Celsius)', ylabel= 'Light(in Lux)')
@@ -76,6 +79,7 @@ def scatter_plot(df):
     plt.scatter(x_vals, y_vals, color='gray')
     plt.savefig("./visuals/TempVsLight.png")
 
+    print("Plotting Temp vs Sound")
     fig2, ax2 = plt.subplots()
     fig2.suptitle("Average Temperature vs Sound")
     ax2.set(xlabel = 'Temperature(in Celsius)', ylabel= 'Sound(in Volts)')
@@ -85,6 +89,7 @@ def scatter_plot(df):
     plt.scatter(x_vals, y_vals, color='red')
     plt.savefig("./visuals/TempVsSound.png")
 
+    print("Plotting Temp vs Co2")
     fig3, ax3 = plt.subplots()
     fig3.suptitle("Average Temperature vs CO2 Concentration")
     ax3.set(xlabel = 'Temperature(in Celsius)', ylabel= 'CO2 Concentration(in ppm)')
@@ -94,6 +99,7 @@ def scatter_plot(df):
     plt.scatter(x_vals, y_vals)
     plt.savefig("./visuals/TempVsCO2Conc.png")
 
+    print("Plotting Light vs Sound")
     fig4, ax4 = plt.subplots()
     fig4.suptitle("Light vs Sound")
     ax4.set(xlabel = 'Light(in Lux)', ylabel= 'Sound(in Volts)')
@@ -103,6 +109,7 @@ def scatter_plot(df):
     plt.scatter(x_vals, y_vals, color='orange')
     plt.savefig("./visuals/LightVsSound.png")
 
+    print("Plotting Light vs Co2")
     fig5, ax5 = plt.subplots()
     fig5.suptitle("Light vs Co2Concentration")
     ax5.set(xlabel = 'Light(in Lux)', ylabel= 'CO2 Concentration(in ppm)')
@@ -112,6 +119,7 @@ def scatter_plot(df):
     plt.scatter(x_vals, y_vals, color='pink')
     plt.savefig("./visuals/LightVsCo2Conc.png")
 
+    print("Plotting Sound vs Co2")
     fig6, ax6 = plt.subplots()
     fig6.suptitle("Sound vs Co2Concentration")
     ax6.set(xlabel = 'Sound(in Volts)', ylabel= 'CO2 Concentration(in ppm)')
@@ -122,6 +130,7 @@ def scatter_plot(df):
     plt.savefig("./visuals/SoundVsCo2Conc.png")
 
 def hist(df):
+    print("Plotting PIR histogram")
     sensor_vals = list(df['S6_PIR'])
     figure, axes= plt.subplots()
     figure.suptitle("The frequency of values in PIR sensor")
