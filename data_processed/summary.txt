@@ -1,0 +1,20 @@
+Temp_Avg
+Maximum: 26.8
+Minimum: 24.89
+Median: 25.3625
+
+S1_Light
+Maximum: 165
+Minimum: 0
+Median: 0.0
+
+S1_Sound
+Maximum: 3.88
+Minimum: 0.06
+Median: 0.08
+
+S5_CO2
+Maximum: 1270
+Minimum: 345
+Median: 360.0
+

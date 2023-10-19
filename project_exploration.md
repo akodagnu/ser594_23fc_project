@@ -74,10 +74,11 @@ Performance was evaluated using metrics like accuracy, F1 score, and confusion m
 Note: Some of the links require logging in with ASU credentials, especially to view the IEEE papers in the references.
 
 ## Data Transformation
-### Transformation N
-**Description:** TODO
+### Transformation 1
+**Description:** Getting an averaged temperature value
 
-**Soundness Justification:** TODO
+**Soundness Justification:** Most of the values in my dataset are already in a useful format. But, the temperature values obtained from the four different sensors can be averaged to get one temperature value.
+This transformation mkaes sense only for temperature values since the values are similar, for the rest of the sensors, the values detected depends on various other factors like closeness to the doors and windows.
 
 (duplicate above as many times as needed; remove this line when done)
 
