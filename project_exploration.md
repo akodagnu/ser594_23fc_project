@@ -80,11 +80,53 @@ Note: Some of the links require logging in with ASU credentials, especially to v
 **Soundness Justification:** Most of the values in my dataset are already in a useful format. But, the temperature values obtained from the four different sensors can be averaged to get one temperature value.
 This transformation mkaes sense only for temperature values since the values are similar, for the rest of the sensors, the values detected depends on various other factors like closeness to the doors and windows.
 
-(duplicate above as many times as needed; remove this line when done)
-
 
 ## Visualization
-### Visual N
-**Analysis:** TODO
+### Visual 1
+**Analysis:** 
+Temperature Vs Light
 
-(duplicate above as many times as needed; remove this line when done)
+Based on the correlation matrix values, we can say that as light increases, temperature also tends to increase and they have a positive correlation.
+From the visual also, this is supported majorly. It is reasonable since light waves emit radiation, temperature tends to increase.
+
+### Visual 2
+**Analysis:** 
+Temperature Vs Sound
+
+Temperature and sound have a correlation value less than 0.5 which indicates that we probably cannot deduce a linear relationship between the two entities.
+This can be seen in the visual too, the values are all over the place and we cannot pinpoint or deduce a relationship.
+
+### Visual 3
+**Analysis:** 
+Temperature Vs CO2Concentration
+
+Temperature and CO2COncentration have a correlation value almost closer to 1. This means that they have a strong positive correlation, as CO2 concentration increases, temperature also increases.
+This is a known fact, greenhouse gases like CO2 increase the temperature of the surroundings.
+
+### Visual 4
+**Analysis:** 
+Light Vs Sound
+
+According to my correlation matrix, light and sound have positive correlation. But this might be a coincidence since we do not have a factual explanation for this. 
+Mostly they are two unrelated entities.
+
+### Visual 5
+**Analysis:** 
+Light Vs CO2Concentration
+
+A similar such analysis can be done on Light and CO2 concentration. There is no factual basis to support a correlation value of 0.6. 
+Thus, this is not a significant relationship we should consider exploring. The visual also does not give any concrete relationship.
+
+### Visual 6
+**Analysis:** 
+Sound Vs CO2Concentration
+
+Sound and carbon dioxide concentration have a correlation value less than 0.5 and this suggests that there is little to no linear relationship between the two variables.
+The graph is also scattered with values covering the whole plot. We cannot deduce any relationship among them.
+
+### Visual 7
+**Analysis:** 
+PIR histogram
+
+From the histogram we can see that the sensor reads the value 0 most of the time. This would mean that no motion is detected most of the times. 
+It could also mean that the room is empty, or has less people(upto 1 person) most of the time when the sensor reads a value 0.
