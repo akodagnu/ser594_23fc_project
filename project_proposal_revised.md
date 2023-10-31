@@ -36,6 +36,8 @@ hence it is necessary to maintain a safe number. Instead of using cameras, RFIDs
 This would be a good place to start. 
 http://archive.ics.uci.edu/dataset/864/room+occupancy+estimation
 
+More recent Carbon dioxide levels can also be found here: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_trend_gl.txt
+
 
 **Background Knowledge:**
 1. https://www.ashrae.org/file%20library/about/position%20documents/pd_indoorcarbondioxide_2022.pdf
