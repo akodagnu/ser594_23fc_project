@@ -19,4 +19,4 @@ def get_temp_value(df):
 def read_dataset(filename):
     df = pd.read_csv(filename)
     get_temp_value(df)
-    df.to_csv('./data_processed/Occupancy_Estimation_processed.csv')
+    df.to_csv('./data_processed/Occupancy_Estimation_processed.csv', index=False)
