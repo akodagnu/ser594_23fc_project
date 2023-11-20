@@ -3,8 +3,8 @@ import pickle
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 
-def predict():
-    with open('models/random_forest_model.pickle', 'rb') as file:
+def predict(filename):
+    with open(filename, 'rb') as file:
         loaded_model = pickle.load(file)
     test_data = pd.read_csv("data_processed/test.csv")
     # Dropping the same columns as my train data
@@ -20,4 +20,5 @@ def predict():
     # Calculate R-squared for test set
     r2_score_predict = r2_score(Y_Test, Y_Pred_Test)
     #print(f'R-squared (Test): {r2_test}')
+
     return mse, r2_score_predict

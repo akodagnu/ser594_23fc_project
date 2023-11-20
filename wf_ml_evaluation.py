@@ -18,11 +18,31 @@ def train():
     print("Creating model")
     create_model(data)
     print("Predicting output")
-    mse, r2_score = predict()
+    mse, r2_score = predict('models/random_forest_model1.pickle')
     print("Writing metrics to summary file")
     with open("evaluation/summary.txt","w+") as f:
-        f.write("Dataset \t\t\t\t\t\t\t Mean Squared Error \t\t\t R2 score \n")
-        f.write("Occupancy_Estimation_processed.csv" + "\t" + str(mse) + "\t\t\t" + str(r2_score))
+        f.write("Models \t\t Mean Squared Error \t\t\t R2 score \n")
+        f.write("Model 1" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
+
+    mse, r2_score = predict('models/random_forest_model2.pickle')
+    print("Writing metrics to summary file")
+    with open("evaluation/summary.txt","a+") as f:
+        f.write("Model 2" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
+
+    mse, r2_score = predict('models/random_forest_model3.pickle')
+    print("Writing metrics to summary file")
+    with open("evaluation/summary.txt","a+") as f:
+        f.write("Model 3" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
+        
+    mse, r2_score = predict('models/random_forest_model4.pickle')
+    print("Writing metrics to summary file")
+    with open("evaluation/summary.txt","a+") as f:
+        f.write("Model 4" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
+
+    mse, r2_score = predict('models/random_forest_model5.pickle')
+    print("Writing metrics to summary file")
+    with open("evaluation/summary.txt","a+") as f:
+        f.write("Model 5" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
     
 train()
 
