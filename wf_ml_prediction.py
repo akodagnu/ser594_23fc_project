@@ -12,6 +12,9 @@ def predict(filename):
     Y_Test = test_data['Room_Occupancy_Count']
 
     Y_Pred = loaded_model.predict(X_Test)
+    # For experimentation and analysis, I am storing the predicted value
+    # pred = pd.DataFrame(Y_Pred);
+    # pred.to_csv("predicted_vals.csv")
     mse = mean_squared_error(Y_Test, Y_Pred)
     # print(f'Mean Squared Error: {mse}')
 
