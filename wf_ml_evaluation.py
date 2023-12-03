@@ -1,6 +1,6 @@
 import pandas as pd
-from wf_ml_training import create_model
-from wf_ml_prediction import predict
+from wf_ml_training import create_model, create_new_model
+from wf_ml_prediction import predict, predict_new
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
@@ -43,6 +43,11 @@ def train():
     print("Writing metrics to summary file")
     with open("evaluation/summary.txt","a+") as f:
         f.write("Model 5" + "\t\t" + str(mse) + "\t\t\t" + str(r2_score) + "\n")
+
+    # Using latest CO2 data to estimate room occupancy
+    create_new_model(data)
+    predict_new('models/random_forest_model_CO2.pickle')
+    print("Writing predicted values")
     
 train()
 

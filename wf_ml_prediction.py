@@ -25,3 +25,14 @@ def predict(filename):
     #print(f'R-squared (Test): {r2_test}')
 
     return mse, r2_score_predict
+
+def predict_new(filename):
+    with open(filename, 'rb') as file:
+        loaded_model = pickle.load(file)
+    test_data = pd.read_csv("data_original/co2_concentration.csv")
+    # Dropping the same columns as my train data
+    X_Test = test_data[['S5_CO2']]
+
+    Y_Pred = loaded_model.predict(X_Test)
+    with open("evaluation/prediction_data.txt","a+") as f:
+        f.write(str(Y_Pred))

@@ -45,3 +45,12 @@ def create_model(df):
 
     with open("models/random_forest_model5.pickle", 'wb') as file:
         pickle.dump(rf_regressor_5, file)
+
+def create_new_model(df):
+    X = df[['S5_CO2']]
+    Y = df['Room_Occupancy_Count']
+
+    rf_regressor = RandomForestRegressor(n_estimators=100, random_state=42)
+    rf_regressor.fit(X, Y)
+    with open("models/random_forest_model_CO2.pickle", 'wb') as file:
+        pickle.dump(rf_regressor, file)
